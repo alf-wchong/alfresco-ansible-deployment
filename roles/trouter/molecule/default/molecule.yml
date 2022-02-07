@@ -19,15 +19,11 @@ driver:
   name: docker
 platforms:
   - name: instance
-    image: centos:7
+    image: centos/systemd:latest
     privileged: true
-    tmpfs:
-      - /run
-      - /run/lock
-      - /tmp
     volume_mounts:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    command: /sbin/init
+      - "/sys/fs/cgroup:/sys/fs/cgroup:rw"
+    command: "/usr/sbin/init"
     exposed_ports:
       - 80/tcp
       - 443/tcp
@@ -57,7 +53,7 @@ platforms:
 provisioner:
   name: ansible
   ansible_args:
-    - --inventory=../../inventory_local.yml
+    - --inventory=../../../../inventory_local.yml
     - --limit=instance
   inventory:
     links: 

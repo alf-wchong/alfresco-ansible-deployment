@@ -2,7 +2,6 @@ warn_list:
   - experimental
   - deprecations
 skip_list:
-  - 'risky-file-permissions'
   - 'no-changed-when'
   - 'command-instead-of-module'
   - 'command-instead-of-shell'
