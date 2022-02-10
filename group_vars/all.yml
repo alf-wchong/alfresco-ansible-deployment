@@ -121,13 +121,13 @@ dependencies_url:
   tomcat: "http://archive.apache.org/dist/tomcat/tomcat-{{ dependencies_version.tomcat[0] }}/v{{ dependencies_version.tomcat }}/bin/apache-tomcat-{{ dependencies_version.tomcat }}.tar.gz"
   tomcat_sha512_checksum: "{{ lookup('url', 'http://archive.apache.org/dist/tomcat/tomcat-{{ dependencies_version.tomcat[0] }}/v{{ dependencies_version.tomcat }}/bin/apache-tomcat-{{ dependencies_version.tomcat }}.tar.gz.sha512').split(' ')[0] }}"
 
-repo_db_url: "jdbc:postgresql://awsomeb-alfdb.cluster-cpglxq59nq94.us-east-1.rds.amazonaws.com:5432/alfresco"
+repo_db_url: "jdbc:postgresql://awsomeb-alfdb-cloned-eu-west-2a-cluster.cluster-c78ggy58ag4r.eu-west-2.rds.amazonaws.com:5432/alfresco"
 repo_db_driver: org.postgresql.Driver
 repo_db_name: "alfresco"
 repo_db_username: "alfresco"
 repo_db_password: "alfresco"
 
-sync_db_url: "jdbc:postgresql://awsomeb-alfdb.cluster-cpglxq59nq94.us-east-1.rds.amazonaws.com:5432/alfresco-sync"
+sync_db_url: "jdbc:postgresql://awsomeb-alfdb-cloned-eu-west-2a-cluster.cluster-c78ggy58ag4r.eu-west-2.rds.amazonaws.com:5432/alfresco-sync"
 sync_db_driver: org.postgresql.Driver
 sync_db_name: "alfresco-sync"
 sync_db_username: "alfresco"
@@ -135,4 +135,4 @@ sync_db_password: "alfresco"
 
 use_ssl: false
 # Put your domain name here if any (e.g. ecm.alfresco.com). Needs to be empty if unused (don't use dummy values)
-fqdn_alfresco: "AWSomeAlf-2049978161.us-east-1.elb.amazonaws.com"
+fqdn_alfresco: "AWSomeAlf-London-1474669714.eu-west-2.elb.amazonaws.com"

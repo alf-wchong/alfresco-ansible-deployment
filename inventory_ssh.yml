@@ -13,7 +13,7 @@ all:
       hosts:
         repository_1:
           connection: ssh
-          ansible_host: ip-172-31-42-26.ec2.internal
+          ansible_host: ip-172-31-18-114.eu-west-2.compute.internal
           ansible_private_key_file: "/home/ec2-user/alfadmin-KeyPair.pem"
           ansible_user: alfadmin           
           ansible_ssh_common_args: "-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s -o ForwardX11=no -o LogLevel=ERROR -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
@@ -21,7 +21,7 @@ all:
       hosts:
         activemq_1:
           connection: ssh
-          ansible_host: ip-172-31-42-26.ec2.internal
+          ansible_host: ip-172-31-18-114.eu-west-2.compute.internal
           ansible_private_key_file: "/home/ec2-user/alfadmin-KeyPair.pem"
           ansible_user: alfadmin           
           ansible_ssh_common_args: "-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s -o ForwardX11=no -o LogLevel=ERROR -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
@@ -29,7 +29,7 @@ all:
       hosts:
         search_1:
           connection: ssh
-          ansible_host: ip-172-31-42-26.ec2.internal
+          ansible_host: ip-172-31-18-114.eu-west-2.compute.internal
           ansible_private_key_file: "/home/ec2-user/alfadmin-KeyPair.pem"
           ansible_user: alfadmin           
           ansible_ssh_common_args: "-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s -o ForwardX11=no -o LogLevel=ERROR -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
@@ -37,7 +37,7 @@ all:
       hosts:
         nginx_1:
           connection: ssh
-          ansible_host: ip-172-31-42-26.ec2.internal
+          ansible_host: ip-172-31-18-114.eu-west-2.compute.internal
           ansible_private_key_file: "/home/ec2-user/alfadmin-KeyPair.pem"
           ansible_user: alfadmin           
           ansible_ssh_common_args: "-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s -o ForwardX11=no -o LogLevel=ERROR -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
@@ -45,7 +45,7 @@ all:
       hosts:
         adw_1:
           connection: ssh
-          ansible_host: ip-172-31-42-26.ec2.internal
+          ansible_host: ip-172-31-18-114.eu-west-2.compute.internal
           ansible_private_key_file: "/home/ec2-user/alfadmin-KeyPair.pem"
           ansible_user: alfadmin           
           ansible_ssh_common_args: "-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s -o ForwardX11=no -o LogLevel=ERROR -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
@@ -53,7 +53,7 @@ all:
       hosts:
         transformers_1:
           connection: ssh
-          ansible_host: ip-172-31-42-26.ec2.internal
+          ansible_host: ip-172-31-18-114.eu-west-2.compute.internal
           ansible_private_key_file: "/home/ec2-user/alfadmin-KeyPair.pem"
           ansible_user: alfadmin           
           ansible_ssh_common_args: "-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s -o ForwardX11=no -o LogLevel=ERROR -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
@@ -61,7 +61,7 @@ all:
       hosts:
         syncservice_1:
           connection: ssh
-          ansible_host: ip-172-31-42-26.ec2.internal
+          ansible_host: ip-172-31-18-114.eu-west-2.compute.internal
           ansible_private_key_file: "/home/ec2-user/alfadmin-KeyPair.pem"
           ansible_user: alfadmin           
           ansible_ssh_common_args: "-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s -o ForwardX11=no -o LogLevel=ERROR -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
