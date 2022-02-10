@@ -19,6 +19,9 @@ share_templates:
   - share-config-custom.xml
   - smartfolders-amp-actions-config.xml
 
+webscript_templates:
+  - web-scripts-config-custom.xml
+
 repository:
   protocol: http
   host: "{{ repo_host }}"
@@ -27,6 +30,7 @@ repository:
 share_port: "{{ ports_cfg.repository.http }}"
 
 csrf_config:
-  enabled: "false"
+  # enabled: "false" -- don't need to protect or demo
+  enabled: "true"
   referer: "{{ repository.protocol }}://{{ repository.host }}/.*"
   origin: "{{ repository.protocol }}://{{ repository.host }}"

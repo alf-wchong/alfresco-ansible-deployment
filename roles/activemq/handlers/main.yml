@@ -12,3 +12,17 @@
     name: activemq
     state: restarted
     daemon_reload: true
+
+- name: stop-activemq
+  service:
+    name: activemq
+    state: stopped
+    daemon_reload: true
+
+- name: start-activemq
+  service:
+    name: activemq
+    state: started
+    daemon_reload: true
+
+

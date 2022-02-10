@@ -1,0 +1,18 @@
+clear&&date&&echo **** Start ActiveMQ****&&sudo systemctl start activemq&&echo ***** Start Content *****&&sudo systemctl start alfresco-content&&echo ***** Start Search ****&&sudo systemctl start alfresco-search&&date&&echo +++++++++ Start Log Tail +++++++&&tail -f /var/log/alfresco/catalina.out
+
+clear&&date&&\
+echo **** Stop ActiveMQ****&&sudo systemctl stop activemq&&\
+echo ***** Stop Content *****&&sudo systemctl stop alfresco-content&&\
+echo ***** Stop Search ****&&sudo systemctl stop alfresco-search&&\
+date&&\
+echo +++++++++ Clearing Logs +++++++&&\
+rm -f /var/log/alfresco/catalina.out /var/log/alfresco/alfresco.log /var/log/alfresco/catalina.out \
+/var/log/alfresco/activemq.log /var/log/alfresco/share.log /var/log/alfresco/solr.log &&\
+date&&\
+echo **** Start ActiveMQ****&&sudo systemctl start activemq&&\
+echo ***** Start Content *****&&sudo systemctl start alfresco-content&&\
+echo ***** Start Search ****&&sudo systemctl start alfresco-search&&\
+date&&\
+echo +++++++++ Start Log Tail +++++++&&tail -f /var/log/alfresco/catalina.out
+
+

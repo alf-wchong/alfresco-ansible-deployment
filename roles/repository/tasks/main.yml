@@ -145,6 +145,17 @@
   loop: "{{ share_templates }}"
   changed_when: false
 
+- name: Add the webscript configuration templates
+  become: true
+  template:
+    owner: "{{ username }}"
+    group: "{{ group_name }}"
+    src: "{{ item }}"
+    dest: "{{ settings_folder }}/classpath/alfresco/extension/{{ item }}"
+    mode: 'u=rwx,g=rwx,o=rx'
+  loop: "{{ webscript_templates }}"
+  changed_when: false
+
 - name: Extract {{ acs_zip_file }} into {{ content_folder }}
   become: true
   unarchive:
@@ -358,6 +369,26 @@
     mode: 'u=rwx,g=rwx,o=rx'
   when: not api_explorer_xml.stat.exists
 
+- name: Link content_data_folder dir.root to EFS
+  file:
+    src: /efs/alfresco-content
+    dest: "{{ content_data_folder }}/content-efs"
+    owner: "{{ username }}"
+    group: "{{ group_name }}"
+    state: link
+    force: true
+
+
+- name: Create a symbolic link {{ tomcat_config_dir }}/logs
+  file:
+    src: "{{ logs_folder }}"
+    dest: "{{ tomcat_config_dir }}/logs"
+    group: "{{ group_name }}"
+    owner: "{{ username }}"
+    state: link
+    force: true
+
+
 - name: Create alfresco-global.properties
   template:
     owner: "{{ username }}"
@@ -428,6 +459,22 @@
     regexp: '<PostResources base='
     line: '<PostResources base="/opt/alfresco/modules/acs-platform"'
 
+- name: Increase cache size of alfresco.xml
+  become: true
+  become_user: root
+  lineinfile:
+    path: "{{ tomcat_config_dir }}/conf/Catalina/localhost/alfresco.xml"
+    regexp: '<Resources>'
+    line: '<Resources cacheMaxSize="51200" cachingAllowed="true">'
+
+
+- name: Remove MS-DOS linefeeds from share.xml
+  become: true
+  become_user: root
+  shell:
+    chdir: "{{ tomcat_config_dir }}/conf/Catalina/localhost/"
+    cmd: dos2unix "share.xml"
+
 - name: Add PostResources to share.xml
   become: true
   become_user: root
@@ -435,6 +482,23 @@
     path: "{{ tomcat_config_dir }}/conf/Catalina/localhost/share.xml"
     regexp: '<PostResources base='
     line: '<PostResources base="/opt/alfresco/modules/acs-share"'
+
+- name: Increase cache size of share.xml
+  become: true
+  become_user: root
+  lineinfile:
+    path: "{{ tomcat_config_dir }}/conf/Catalina/localhost/share.xml"
+    regexp: '<Resources>'
+    line: '<Resources cacheMaxSize="51200" cachingAllowed="true">'
+
+- name: Increase cache size of Tomcat
+  become: true
+  become_user: root
+  lineinfile:
+    path: "{{ tomcat_config_dir }}/conf/context.xml"
+    insertafter: '^<Context>' 
+    line: '<Resources cacheMaxSize="51200" cachingAllowed="true"/>'
+
 
 - name: Insert or Update custom properties added through configuration_files/alfresco-global.properties
   blockinfile:

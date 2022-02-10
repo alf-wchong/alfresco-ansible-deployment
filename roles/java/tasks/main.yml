@@ -39,6 +39,17 @@
     group: root
     mode: 'u=rwx,g=rx,o=rx'
 
+# to work around the Copy Java task unable to set java executable
+- name: Set Java executable explictly
+  become: true
+  become_user: root
+  file:
+    dest: "{{ java_home }}/bin/java"
+    owner: root
+    group: root
+    mode: 'u=rwx,g=rx,o=rx'
+
+
 - name: Check if setenv file exists
   stat:
     path: "{{ config_folder }}/setenv.sh"

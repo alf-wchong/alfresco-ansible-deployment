@@ -141,4 +141,6 @@
   notify: 
     - enable-search
     - restart-search
+    #- stop-search
+    #- start-search
   when: search_started.failed or '"No Solr nodes are running." in search_started.stdout'

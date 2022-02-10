@@ -167,3 +167,9 @@
     - wait-for-activemq
     - enable-aio
     - restart-aio
+
+#- name: Pause to confirm AIO has been restarted
+#  pause:
+#    prompt: Check using sudo systemctl status alfresco-tengine-aio. If SystemD says the service is not found, verify if the service exists in /etc/systemd/system/alfresco-tengine-aio.service
+
+

@@ -7,7 +7,20 @@
     daemon_reload: true
 
 - name: restart-search
+  become: true
   service:
     name: alfresco-search
     state: restarted
+    daemon_reload: true
+
+- name: start-search
+  service:
+    name: alfresco-search
+    state: started
+    daemon_reload: true
+
+- name: stop-search
+  service:
+    name: alfresco-search
+    state: stopped
     daemon_reload: true

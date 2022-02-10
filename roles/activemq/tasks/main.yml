@@ -127,7 +127,9 @@
     group: "{{ group_name }}"
     mode: 'u=rwx,go=rx'
   notify:
-    - restart-activemq
+    #- restart-activemq
+    - stop-activemq
+    - start-activemq
 
 - name: Add activemq.service
   template:
@@ -138,4 +140,6 @@
     mode: 'u=rwx,g=rwx,o=rx'
   notify:
     - enable-activemq
-    - restart-activemq
+    #- restart-activemq
+    - stop-activemq
+    - start-activemq

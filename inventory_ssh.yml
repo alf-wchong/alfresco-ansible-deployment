@@ -5,7 +5,7 @@ all:
       hosts:
         database_1:
           connection: ssh
-          ansible_host: targetIP
+          ansible_host: awsomeb-alfdb.cluster-cpglxq59nq94.us-east-1.rds.amazonaws.com
           ansible_private_key_file: "/path/ssh_key.pem"
           ansible_user: centos           
           ansible_ssh_common_args: "-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s -o ForwardX11=no -o LogLevel=ERROR -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
@@ -13,55 +13,55 @@ all:
       hosts:
         repository_1:
           connection: ssh
-          ansible_host: targetIP
-          ansible_private_key_file: "/path/ssh_key.pem"
-          ansible_user: centos           
+          ansible_host: ip-172-31-42-26.ec2.internal
+          ansible_private_key_file: "/home/ec2-user/alfadmin-KeyPair.pem"
+          ansible_user: alfadmin           
           ansible_ssh_common_args: "-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s -o ForwardX11=no -o LogLevel=ERROR -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
     activemq:
       hosts:
         activemq_1:
           connection: ssh
-          ansible_host: targetIP
-          ansible_private_key_file: "/path/ssh_key.pem"
-          ansible_user: centos           
+          ansible_host: ip-172-31-42-26.ec2.internal
+          ansible_private_key_file: "/home/ec2-user/alfadmin-KeyPair.pem"
+          ansible_user: alfadmin           
           ansible_ssh_common_args: "-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s -o ForwardX11=no -o LogLevel=ERROR -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
     search:
       hosts:
         search_1:
           connection: ssh
-          ansible_host: targetIP
-          ansible_private_key_file: "/path/ssh_key.pem"
-          ansible_user: centos           
+          ansible_host: ip-172-31-42-26.ec2.internal
+          ansible_private_key_file: "/home/ec2-user/alfadmin-KeyPair.pem"
+          ansible_user: alfadmin           
           ansible_ssh_common_args: "-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s -o ForwardX11=no -o LogLevel=ERROR -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
     nginx:
       hosts:
         nginx_1:
           connection: ssh
-          ansible_host: targetIP
-          ansible_private_key_file: "/path/ssh_key.pem"
-          ansible_user: centos           
+          ansible_host: ip-172-31-42-26.ec2.internal
+          ansible_private_key_file: "/home/ec2-user/alfadmin-KeyPair.pem"
+          ansible_user: alfadmin           
           ansible_ssh_common_args: "-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s -o ForwardX11=no -o LogLevel=ERROR -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
     adw:
       hosts:
         adw_1:
           connection: ssh
-          ansible_host: targetIP
-          ansible_private_key_file: "/path/ssh_key.pem"
-          ansible_user: centos           
+          ansible_host: ip-172-31-42-26.ec2.internal
+          ansible_private_key_file: "/home/ec2-user/alfadmin-KeyPair.pem"
+          ansible_user: alfadmin           
           ansible_ssh_common_args: "-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s -o ForwardX11=no -o LogLevel=ERROR -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
     transformers:
       hosts:
         transformers_1:
           connection: ssh
-          ansible_host: targetIP
-          ansible_private_key_file: "/path/ssh_key.pem"
-          ansible_user: centos           
+          ansible_host: ip-172-31-42-26.ec2.internal
+          ansible_private_key_file: "/home/ec2-user/alfadmin-KeyPair.pem"
+          ansible_user: alfadmin           
           ansible_ssh_common_args: "-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s -o ForwardX11=no -o LogLevel=ERROR -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
     syncservice:
       hosts:
         syncservice_1:
           connection: ssh
-          ansible_host: targetIP
-          ansible_private_key_file: "/path/ssh_key.pem"
-          ansible_user: centos           
+          ansible_host: ip-172-31-42-26.ec2.internal
+          ansible_private_key_file: "/home/ec2-user/alfadmin-KeyPair.pem"
+          ansible_user: alfadmin           
           ansible_ssh_common_args: "-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s -o ForwardX11=no -o LogLevel=ERROR -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"

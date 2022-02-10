@@ -15,6 +15,7 @@
   when: repo_db_url != ""
 
 - name: restart-alfresco-content
+  become: true
   service:
     name: "alfresco-content"
     state: restarted

@@ -1,3 +1,10 @@
+#Inventory file
+inventory_local.yml
+inventory_ssh.yml
+
+#Local Ansible config
+ansible.cfg
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
