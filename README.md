@@ -1,5 +1,5 @@
 # This fork provides a means to perform a disconnected install of the Transformer role.
-All roles have  been updated for a disconnected install. The [roles](roles), for the most part completes without erros on an offline RHEL7 server (ie a host that cannot connect to the internet or has no RPM repositories to retrieve packages). 
+All roles have  been updated for a disconnected install. The [roles](roles), for the most part completes without errors on an offline RHEL7 server (ie a host that cannot connect to the internet or has no RPM repositories to retrieve packages). 
 Some roles that have triggered tasks may fail on the triggers (i.e roles having [wait_for](roles/trouter/tasks/main.yml#L106) tasks). Triggers are on the *To-Do list* by running the [ACS](playbook/acs.yml) playbook.
 
 Remember to change the [host/IP of the target](https://github.com/alf-wchong/alfresco-ansible-deployment/blob/a98e00be3e9a6c44b429f6f0280aeb6fec7d117e/playbooks/ats.yml#L11) in the playbook.
